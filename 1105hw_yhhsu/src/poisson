@@ -1,0 +1,62 @@
+import math
+import numpy as np
+import matplotlib.pyplot as plt
+def Exact(x,y):
+	phi=np.outer(np.sin(np.pi*x),np.cos(np.pi*2*y))
+	return phi
+
+def Jacobi(u,fxy):
+	u_old[:,:]=u[:,:]
+	u[1:-1, 1:-1] = (u[0:-2, 1:-1] + u[2:, 1:-1] + u[1:-1,0:-2] + u[1:-1, 2:]+h**2*fxy[1:-1,1:-1])/4.
+	err=np.sum(np.sqrt((u-u_old)**2))
+	return u,err
+
+def pure_python_red_black_gauss_seidel_step(u, f, h):
+    m, n = u.shape
+    h2 = h * h;
+    for sweep in ('red', 'black'):
+        for i in range(1, m - 1):
+            start = 1 + i % 2 if sweep == 'red' else 2 - i % 2
+            for j in range(start, n - 1, 2):
+                u[i, j] = (u[i + 1, j] +
+                           u[i - 1, j] +
+                           u[i, j + 1] +
+                           u[i, j - 1] +
+                           h2 * f[i, j]) * 0.25
+    return u
+
+L=10
+xmax=1.
+ymax=1.
+h=1./(L-1)
+x=np.linspace(0,1,L)
+y=np.linspace(0,1,L)
+
+#Poisson function
+
+fxy=np.zeros((L,L))
+fxy[1:-1,1:-1]=-5*np.pi**2*np.outer(np.sin(np.pi*x[1:-1]),np.cos(2*np.pi*y[1:-1]))
+print fxy
+#initial guess
+u=np.zeros((L,L))
+u_old=np.zeros((L,L))
+u_test=np.zeros((L,L))
+
+u[:,0]=np.sin(np.pi*x)
+u[:,-1]=np.sin(np.pi*x)
+u[0,:]=0
+u[-1,:]=0
+u[1:-1,1:-1]=np.random.rand(L-2,L-2)
+
+
+u_test[:,:]=u[:,:]
+
+for k in range(0,10):
+	u=pure_python_red_black_gauss_seidel_step(u,fxy,h)
+print u
+
+for k in range(0,500):
+	u,err=Jacobi(u_test,fxy)
+print u
+
+print Exact(x,y)

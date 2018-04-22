@@ -1,0 +1,95 @@
+% INSTRUCTIONS:
+% To compile this file, run "latex HW_example";  you need to do it TWICE
+%    to get the cross-references (to equations, etc) to show correctly.
+% Figures can be included as shown below.  If you don't have a figure,
+%    comment out those lines using % signs at the beginning of each line,
+%    or else just keep hitting RETURN when LaTeX gives an error message
+%    saying that it can't find the figure file.
+% Run "dvips HW_example.dvi" to make a Postscript file HW_example.ps,
+%    and then "ps2pdf HW_example.ps" to make a PDF file HW_example.pdf.
+
+\documentclass[12pt]{article}
+\usepackage{graphicx,indentfirst}
+
+\pagestyle{plain}
+\baselineskip 18pt
+\textwidth 6.5in
+\textheight 7.8in
+\oddsidemargin 0.1in
+\evensidemargin 0.1in
+\topmargin 0.3in
+
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\reff}[1]{(\ref{#1})}
+
+
+\begin{document}
+
+\title{Computational Physics \\ Homework x}
+\author{Student Name}
+\date{Put today's date here}
+\maketitle
+
+\section{Problem 1}
+
+Re-calculation and experiment on Example 2
+
+
+\subsection{Sample output}
+
+
+input	initial_single = 0.182322	initial_double = 0.182321556794
+n=	single value	double value	exact value
+1	0.0883921831846	0.0883922160302	0.0883922160302
+2	0.0580390840769	0.0580389198489	0.0580389198489
+3	0.0431379129489	0.043138734089	0.043138734089
+4	0.0343104352554	0.034306329555	0.034306329555
+5	0.0284478237232	0.0284683522252	0.0284683522251
+6	0.0244275480509	0.0243249055404	0.024324905541
+7	0.0207194026027	0.021232615155	0.021232615152
+8	0.0214029869864	0.0188369242248	0.0188369242401
+9	0.004096176179350.0169264899873	0.0169264899104
+10	0.0795191191033	0.0153675500637	0.0153675504482
+11	-0.306686504607	0.0140713405907	0.0140713386682
+12	1.61676585637	0.01297663038	0.0129766399925
+13	-8.00690620492	0.012039925023	0.0120398769604
+14	40.105959596	0.0112289463138	0.0112291866265
+15	-200.463131314	0.0105219350978	0.0105207335343
+16	1002.37815657	0.009890324510980.00989633232855
+17	-5011.83195931	0.009371906856860.00934186776899
+18	25059.2153521	0.008696021271270.0088462167106
+19	-125296.024129	0.009151472591020.00840049539435
+20	626480.170645	0.004242637044920.00799752302823
+21	-3132400.8056	0.0264058623944	0.00763143247789
+22	15662004.0735	-0.08657476651770.00729738306511
+23	-78310020.3239	0.476352093458	0.00699134554401
+24	391550101.661	-2.34009380062	0.00670993894663
+25	-1957750508.27	11.7404690031	0.00645030526687
+26	9788752541.37	-58.6638834771	0.00621001212721
+27	-48943762706.8	293.356454423	0.00598697640098
+28	244718813534.0	-1466.74655783	0.00577940370941
+29	-1.22359406767e+12	7333.76727189	0.00558574007364
+30	6.11797033835e+12	-36668.8030261	0.00540463296514
+
+
+\begin{figure}[h]
+\begin{center}
+%\includegraphics[width=0.4\textwidth]{your_figure_name_here.eps}
+\caption{This figure shows how wonderful my code is.}
+\label{fig1}
+\end{center}
+\end{figure}
+
+
+\section{Problem 2}
+Find the maximum value of height
+
+\subsection{Theory}
+using Taylor expansion and substract unknown variable
+
+\subsection{Sample output}
+
+Height = 0.0193649210826
+
+\end{document}

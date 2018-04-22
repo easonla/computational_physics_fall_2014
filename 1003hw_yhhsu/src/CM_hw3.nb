@@ -1,0 +1,366 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     13289,        357]
+NotebookOptionsPosition[     12467,        323]
+NotebookOutlinePosition[     12821,        339]
+CellTagsIndexPosition[     12778,        336]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "Computation Physics HW 3\n\n",
+ StyleBox["*Each plot are drawed in dynamics interacted panel where one can \
+adjust favored \[OpenCurlyDoubleQuote]a\[CloseCurlyDoubleQuote] and change \
+initial \[OpenCurlyDoubleQuote]x0\[CloseCurlyDoubleQuote] to see how is the \
+series sensitive to initial value.\n", "Subsection"],
+ "\n",
+ StyleBox["problem 1 : \n", "Subsection"],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["x", 
+     RowBox[{"n", "+", "1"}]], "=", 
+    RowBox[{
+     RowBox[{"f", "(", 
+      SubscriptBox["x", "n"], ")"}], "=", " ", 
+     RowBox[{"a", " ", 
+      SubscriptBox["x", "n"], " ", 
+      RowBox[{"(", " ", 
+       RowBox[{"1", " ", "-", " ", 
+        SubscriptBox["x", "n"]}], ")"}]}]}]}], TraditionalForm]], 
+  "Subsection"],
+ "\n",
+ StyleBox["plot a =0.9, 0.99, 1 to first 100 iteration, see how series \
+converge to fixed point x*=0", "Subsection"]
+}], "Section",
+ CellChangeTimes->{{3.620773342796474*^9, 3.62077359115567*^9}, {
+  3.6207873467588167`*^9, 3.620787347887285*^9}, {3.6207874151041613`*^9, 
+  3.6207874455560837`*^9}, {3.620787567493754*^9, 3.620787679939267*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"ListPlot", "[", 
+    RowBox[{
+     RowBox[{"RecurrenceTable", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"x", "[", "n", "]"}], " ", "\[Equal]", " ", 
+          RowBox[{"a", " ", 
+           RowBox[{"x", "[", 
+            RowBox[{"n", "-", "1"}], "]"}], 
+           RowBox[{"(", 
+            RowBox[{"1", "-", 
+             RowBox[{"x", "[", 
+              RowBox[{"n", "-", "1"}], "]"}]}], ")"}]}]}], ",", 
+         RowBox[{
+          RowBox[{"x", "[", "1", "]"}], "\[Equal]", "x0"}]}], "}"}], ",", "x",
+        ",", 
+       RowBox[{"{", 
+        RowBox[{"n", ",", "1", ",", "300"}], "}"}]}], "]"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "1"}], "}"}]}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "0.01", ",", "4."}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x0", ",", "0.01", ",", "0.999"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.620787293564478*^9, 3.620787295136869*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 0.9, $CellContext`x0$$ = 0.506, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`a$$], 0.01, 4.}, {
+      Hold[$CellContext`x0$$], 0.01, 0.999}}, Typeset`size$$ = {
+    360., {117., 121.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`a$8627$$ = 
+    0, $CellContext`x0$8628$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 0.01, $CellContext`x0$$ = 0.01}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$8627$$, 0], 
+        Hold[$CellContext`x0$$, $CellContext`x0$8628$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> ListPlot[
+        RecurrenceTable[{$CellContext`x[$CellContext`n] == ($CellContext`a$$ \
+$CellContext`x[$CellContext`n - 1]) (
+            1 - $CellContext`x[$CellContext`n - 1]), $CellContext`x[
+           1] == $CellContext`x0$$}, $CellContext`x, {$CellContext`n, 1, 
+          300}], PlotRange -> {0, 1}], 
+      "Specifications" :> {{$CellContext`a$$, 0.01, 4.}, {$CellContext`x0$$, 
+         0.01, 0.999}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {188., 193.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Input",
+ CellChangeTimes->{3.6207873070192213`*^9}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6207873509796457`*^9, 3.62078735194678*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["problem 2 \nplot a=1.01, 2, 2.9, 2.99, 3.0 , see the \
+series converges to fixed point x*=1-1/a , depends on a.", "Subsection"]], \
+"Section",
+ CellChangeTimes->{{3.620787360009739*^9, 3.620787406888385*^9}, {
+  3.620787453581196*^9, 3.620787519893969*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"ListPlot", "[", 
+    RowBox[{
+     RowBox[{"RecurrenceTable", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"x", "[", "n", "]"}], " ", "\[Equal]", " ", 
+          RowBox[{"a", " ", 
+           RowBox[{"x", "[", 
+            RowBox[{"n", "-", "1"}], "]"}], 
+           RowBox[{"(", 
+            RowBox[{"1", "-", 
+             RowBox[{"x", "[", 
+              RowBox[{"n", "-", "1"}], "]"}]}], ")"}]}]}], ",", 
+         RowBox[{
+          RowBox[{"x", "[", "1", "]"}], "\[Equal]", "x0"}]}], "}"}], ",", "x",
+        ",", 
+       RowBox[{"{", 
+        RowBox[{"n", ",", "1", ",", "1000"}], "}"}]}], "]"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "1"}], "}"}]}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "0.01", ",", "4."}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x0", ",", "0.01", ",", "0.999"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.621345099745768*^9, 3.621345106822719*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 3.4494, $CellContext`x0$$ = 0.907, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`a$$], 0.01, 4.}, {
+      Hold[$CellContext`x0$$], 0.01, 0.999}}, Typeset`size$$ = {
+    360., {116., 121.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`a$1968$$ = 
+    0, $CellContext`x0$1969$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 0.01, $CellContext`x0$$ = 0.01}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$1968$$, 0], 
+        Hold[$CellContext`x0$$, $CellContext`x0$1969$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> ListPlot[
+        RecurrenceTable[{$CellContext`x[$CellContext`n] == $CellContext`a$$ \
+$CellContext`x[$CellContext`n - 1] (
+            1 - $CellContext`x[$CellContext`n - 1]), $CellContext`x[
+           1] == $CellContext`x0$$}, $CellContext`x, {$CellContext`n, 1, 
+          1000}], PlotRange -> {0, 1}], 
+      "Specifications" :> {{$CellContext`a$$, 0.01, 4.}, {$CellContext`x0$$, 
+         0.01, 0.999}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {188., 193.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.620787522672002*^9, 3.621345110016873*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+problem 3
+\
+\>", "Subsection",
+ CellChangeTimes->{{3.621123191385236*^9, 3.621123212409408*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"ListPlot", "[", 
+    RowBox[{
+     RowBox[{"RecurrenceTable", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"x", "[", "n", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"a", "^", "2"}], 
+            RowBox[{"x", "[", 
+             RowBox[{"n", "-", "1"}], "]"}]}], "-", 
+           RowBox[{
+            RowBox[{"a", "^", "2"}], 
+            RowBox[{"(", 
+             RowBox[{"1", "+", "a"}], ")"}], 
+            RowBox[{
+             RowBox[{"x", "[", 
+              RowBox[{"n", "-", "1"}], "]"}], "^", "2"}]}], "+", 
+           RowBox[{"2", " ", 
+            RowBox[{"a", "^", "3"}], " ", 
+            RowBox[{
+             RowBox[{"x", "[", 
+              RowBox[{"n", "-", "1"}], "]"}], "^", "3"}]}], "-", 
+           RowBox[{
+            RowBox[{"a", "^", "3"}], " ", 
+            RowBox[{
+             RowBox[{"x", "[", 
+              RowBox[{"n", "-", "1"}], "]"}], "^", "4"}]}]}]}], ",", 
+         RowBox[{
+          RowBox[{"x", "[", "1", "]"}], "\[Equal]", "x0"}]}], "}"}], ",", "x",
+        ",", 
+       RowBox[{"{", 
+        RowBox[{"n", ",", "1", ",", "1000"}], "}"}]}], "]"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "1"}], "}"}]}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "0.01", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x0", ",", "0.01", ",", "0.999"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.621123216585781*^9, 3.621123216589157*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 3.449, $CellContext`x0$$ = 0.511, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`a$$], 0.01, 4}, {
+      Hold[$CellContext`x0$$], 0.01, 0.999}}, Typeset`size$$ = {
+    360., {116., 121.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`a$50885$$ = 
+    0, $CellContext`x0$50886$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 0.01, $CellContext`x0$$ = 0.01}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$50885$$, 0], 
+        Hold[$CellContext`x0$$, $CellContext`x0$50886$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> ListPlot[
+        RecurrenceTable[{$CellContext`x[$CellContext`n] == $CellContext`a$$^2 \
+$CellContext`x[$CellContext`n - 1] - ($CellContext`a$$^2 (
+             1 + $CellContext`a$$)) $CellContext`x[$CellContext`n - 1]^2 + (
+             2 $CellContext`a$$^3) $CellContext`x[$CellContext`n - 
+               1]^3 - $CellContext`a$$^3 $CellContext`x[$CellContext`n - 
+              1]^4, $CellContext`x[
+           1] == $CellContext`x0$$}, $CellContext`x, {$CellContext`n, 1, 
+          1000}], PlotRange -> {0, 1}], 
+      "Specifications" :> {{$CellContext`a$$, 0.01, 4}, {$CellContext`x0$$, 
+         0.01, 0.999}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {188., 193.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.621123218952587*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6207873124345093`*^9, 3.620787313905065*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 652},
+WindowMargins->{{68, Automatic}, {Automatic, 24}},
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (June 27, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1128, 28, 262, "Section"],
+Cell[1711, 52, 1066, 30, 63, "Input"],
+Cell[2780, 84, 2016, 40, 398, "Input"],
+Cell[4799, 126, 93, 1, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4929, 132, 281, 4, 107, "Section"],
+Cell[CellGroupData[{
+Cell[5235, 140, 1067, 30, 63, "Input"],
+Cell[6305, 172, 2039, 40, 398, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8381, 217, 106, 4, 69, "Subsection"],
+Cell[CellGroupData[{
+Cell[8512, 225, 1587, 45, 97, "Input"],
+Cell[10102, 272, 2228, 43, 398, "Output"]
+}, Open  ]],
+Cell[12345, 318, 94, 1, 28, "Input"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

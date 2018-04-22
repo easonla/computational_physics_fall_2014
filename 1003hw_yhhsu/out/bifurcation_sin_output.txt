@@ -1,0 +1,24 @@
+{0.31831, 0.719962, 0.833266, 0.858609, 0.864084, 0.865259}
+
+2^0-period searching 
+initial x0=0.01762, initial bracket=[0.00000,1.00000]
+Fail    :lam=-1.126663823543 a=0.7500000000000 step=   1
+Fail    :lam=-1.001075195093 a=0.7202148437500 step=  11
+Fail    :lam=-1.000001856417 a=0.7199621200562 step=  21
+Success :lam=-1.000000005172 a=0.7199616841972 step=  30 accuracy=1e-08
+
+2^1-period searching 
+initial x0=0.44149, initial bracket=[0.00000,1.00000]
+Fail    :lam=0.4848212537058 a=0.7500000000000 step=   1
+Fail    :lam=-1.004222877832 a=0.8334960937500 step=  11
+Fail    :lam=-0.9999982446463 a=0.8332662582397 step=  21
+Success :lam=-0.999999990607 a=0.8332663532346 step=  31 accuracy=1e-08
+
+2^2-period searching 
+initial x0=0.67492, initial bracket=[0.00000,1.00000]
+Fail    :lam=-0.7924704583845 a=0.7500000000000 step=   1
+Newton fail, change initial value = 0.12883
+Fail    :lam=-0.9455937668439 a=0.8583984375000 step=  11
+Fail    :lam=-1.000133830259 a=0.8591709136963 step=  21
+Fail    :lam=-1.000000060991 a=0.8591690100729 step=  31
+Success :lam=-0.999999995545 a=0.8591690091416 step=  34 accuracy=1e-08
